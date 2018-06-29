@@ -1,0 +1,186 @@
+<datacollection-group xmlns="http://xmlns.opennms.org/xsd/config/datacollection" name="Dell-iDRAC9">
+   <resourceType name="powerSupplyTableEntry" label="Dell iDRAC Poller Supply" resourceLabel="${powSupplyFQDD}">
+      <persistenceSelectorStrategy class="org.opennms.netmgt.collection.support.PersistAllSelectorStrategy"/>
+      <storageStrategy class="org.opennms.netmgt.collection.support.IndexStorageStrategy"/>
+   </resourceType>
+   <resourceType name="voltageProbeTableEntry" label="Dell iDRAC Voltage Probe" resourceLabel="${volProLocName}">
+      <persistenceSelectorStrategy class="org.opennms.netmgt.collection.support.PersistAllSelectorStrategy"/>
+      <storageStrategy class="org.opennms.netmgt.dao.support.SiblingColumnStorageStrategy">
+         <parameter key="sibling-column-name" value="volProLocName"/>
+      </storageStrategy>   
+   </resourceType>
+   <resourceType name="amperageProbeTableEntry" label="Dell iDRAC Amperage Probe" resourceLabel="${ampProLocName}">
+      <persistenceSelectorStrategy class="org.opennms.netmgt.collection.support.PersistAllSelectorStrategy"/>
+      <storageStrategy class="org.opennms.netmgt.dao.support.SiblingColumnStorageStrategy">
+         <parameter key="sibling-column-name" value="ampProLocName"/>
+      </storageStrategy>   
+   </resourceType>
+   <resourceType name="powerUsageTableEntry" label="Dell iDRAC Power Usage" resourceLabel="${poweUsageEntName}">
+      <persistenceSelectorStrategy class="org.opennms.netmgt.collection.support.PersistAllSelectorStrategy"/>
+      <storageStrategy class="org.opennms.netmgt.dao.support.SiblingColumnStorageStrategy">
+         <parameter key="sibling-column-name" value="ampProLocName"/>
+      </storageStrategy>   
+   </resourceType>
+   <resourceType name="coolingDeviceTableEntry" label="Dell iDRAC Cooling Devices" resourceLabel="${coolDevLocName}">
+      <persistenceSelectorStrategy class="org.opennms.netmgt.collection.support.PersistAllSelectorStrategy"/>
+      <storageStrategy class="org.opennms.netmgt.dao.support.SiblingColumnStorageStrategy">
+         <parameter key="sibling-column-name" value="coolDevLocName"/>
+      </storageStrategy>   
+   </resourceType>
+   <resourceType name="temperatureProbeTableEntry" label="Dell iDRAC Temperature Probe" resourceLabel="${tempProbeLocName}">
+      <persistenceSelectorStrategy class="org.opennms.netmgt.collection.support.PersistAllSelectorStrategy"/>
+      <storageStrategy class="org.opennms.netmgt.dao.support.SiblingColumnStorageStrategy">
+         <parameter key="sibling-column-name" value="tempProbeLocName"/>
+      </storageStrategy>   
+   </resourceType>
+   <resourceType name="processorDeviceTableEntry" label="Dell iDRAC Processors" resourceLabel="${procDevicFQDD}">
+      <persistenceSelectorStrategy class="org.opennms.netmgt.collection.support.PersistAllSelectorStrategy"/>
+      <storageStrategy class="org.opennms.netmgt.dao.support.SiblingColumnStorageStrategy">
+         <parameter key="sibling-column-name" value="procDevicFQDD"/>
+      </storageStrategy>   
+   </resourceType>
+   <resourceType name="memoryDeviceTableEntry" label="Dell iDRAC Memory" resourceLabel="${memDevicLocName}">
+      <persistenceSelectorStrategy class="org.opennms.netmgt.collection.support.PersistAllSelectorStrategy"/>
+      <storageStrategy class="org.opennms.netmgt.dao.support.SiblingColumnStorageStrategy">
+         <parameter key="sibling-column-name" value="memDevicLocName"/>
+      </storageStrategy>   
+   </resourceType>
+   <resourceType name="controllerTableEntry" label="Dell iDRAC Controller" resourceLabel="${contrFQDD}">
+      <persistenceSelectorStrategy class="org.opennms.netmgt.collection.support.PersistAllSelectorStrategy"/>
+      <storageStrategy class="org.opennms.netmgt.dao.support.SiblingColumnStorageStrategy">
+         <parameter key="sibling-column-name" value="contrFQDD"/>
+      </storageStrategy>   
+   </resourceType>
+   <resourceType name="physicalDiskTableEntry" label="Dell iDRAC Physical Disks" resourceLabel="${physicalDiskID}">
+      <persistenceSelectorStrategy class="org.opennms.netmgt.collection.support.PersistAllSelectorStrategy"/>
+      <storageStrategy class="org.opennms.netmgt.dao.support.SiblingColumnStorageStrategy">
+         <parameter key="sibling-column-name" value="physicalDiskID"/>
+      </storageStrategy>   
+   </resourceType>
+   <resourceType name="virtualDiskTableEntry" label="Dell iDRAC Virtual Disks" resourceLabel="${virtualDiskName}">
+      <persistenceSelectorStrategy class="org.opennms.netmgt.collection.support.PersistAllSelectorStrategy"/>
+      <storageStrategy class="org.opennms.netmgt.dao.support.SiblingColumnStorageStrategy">
+         <parameter key="sibling-column-name" value="virtualDiskName"/>
+      </storageStrategy>   
+   </resourceType>
+   <group name="powerSupplyTable" ifType="all">
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.600.12.1.6" instance="powerSupplyTableEntry" alias="poweSupplOutpuWatts" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.600.12.1.9" instance="powerSupplyTableEntry" alias="powSuppMaxiInpuVolt" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.600.12.1.14" instance="powerSupplyTableEntry" alias="powSuppRateInpuWatt" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.600.12.1.16" instance="powerSupplyTableEntry" alias="powSuppCurrInpuVolt" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.600.12.1.15" instance="powerSupplyTableEntry" alias="powSupplyFQDD" type="string"/>
+   </group>
+   <group name="voltageProbeTable" ifType="all">
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.600.20.1.6" instance="voltageProbeTableEntry" alias="voltageProbeReading" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.600.20.1.9" instance="voltageProbeTableEntry" alias="volProUppNonRecThre" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.600.20.1.10" instance="voltageProbeTableEntry" alias="volProbUppeCritThre" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.600.20.1.11" instance="voltageProbeTableEntry" alias="volProUppNonCriThre" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.600.20.1.12" instance="voltageProbeTableEntry" alias="volProLowNonCriThre" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.600.20.1.13" instance="voltageProbeTableEntry" alias="volProbLoweCritThre" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.600.20.1.14" instance="voltageProbeTableEntry" alias="volProLowNonRecThre" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.600.20.1.8" instance="voltageProbeTableEntry" alias="volProLocName" type="string"/>
+   </group>
+   <group name="amperageProbeTable" ifType="all">
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.600.30.1.6" instance="amperageProbeTableEntry" alias="amperagProbeReading" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.600.30.1.9" instance="amperageProbeTableEntry" alias="ampProUppNonRecThre" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.600.30.1.10" instance="amperageProbeTableEntry" alias="ampProbUppeCritThre" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.600.30.1.11" instance="amperageProbeTableEntry" alias="ampProUppNonCriThre" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.600.30.1.12" instance="amperageProbeTableEntry" alias="ampProLowNonCriThre" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.600.30.1.13" instance="amperageProbeTableEntry" alias="ampProbLoweCritThre" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.600.30.1.14" instance="amperageProbeTableEntry" alias="ampProLowNonRecThre" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.600.30.1.8" instance="amperageProbeTableEntry" alias="ampProLocName" type="string"/>
+   </group>
+   <group name="powerUsageTable" ifType="all">
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.600.60.1.7" instance="powerUsageTableEntry" alias="poweUsageCumulWatta" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.600.60.1.9" instance="powerUsageTableEntry" alias="powerUsagePeakWatts" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.600.60.1.12" instance="powerUsageTableEntry" alias="powerUsagePeakAmps" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.600.60.1.15" instance="powerUsageTableEntry" alias="powerUsageIdlePower" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.600.60.1.16" instance="powerUsageTableEntry" alias="poweUsagMaxPotePowe" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.600.60.1.19" instance="powerUsageTableEntry" alias="poweUsagPoweCapValu" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.600.60.1.20" instance="powerUsageTableEntry" alias="poweUsageInstaHeadr" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.600.60.1.21" instance="powerUsageTableEntry" alias="powerUsagePeakHeadr" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.600.60.1.6" instance="powerUsageTableEntry" alias="poweUsageEntName" type="string"/>
+   </group>
+   <group name="coolingDeviceTable" ifType="all">
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.700.12.1.6" instance="coolingDeviceTableEntry" alias="coolinDeviceReading" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.700.12.1.9" instance="coolingDeviceTableEntry" alias="cooDevUppNonRecThre" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.700.12.1.10" instance="coolingDeviceTableEntry" alias="cooDeviUppeCritThre" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.700.12.1.11" instance="coolingDeviceTableEntry" alias="cooDevUppNonCriThre" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.700.12.1.12" instance="coolingDeviceTableEntry" alias="cooDevLowNonCriThre" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.700.12.1.13" instance="coolingDeviceTableEntry" alias="cooDeviLoweCritThre" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.700.12.1.14" instance="coolingDeviceTableEntry" alias="cooDevLowNonRecThre" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.700.12.1.8" instance="coolingDeviceTableEntry" alias="coolDevLocName" type="string"/>
+   </group>
+   <group name="temperatureProbeTable" ifType="all">
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.700.20.1.6" instance="temperatureProbeTableEntry" alias="temperaProbeReading" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.700.20.1.9" instance="temperatureProbeTableEntry" alias="temProUppNonRecThre" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.700.20.1.10" instance="temperatureProbeTableEntry" alias="temProbUppeCritThre" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.700.20.1.11" instance="temperatureProbeTableEntry" alias="temProUppNonCriThre" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.700.20.1.12" instance="temperatureProbeTableEntry" alias="temProLowNonCriThre" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.700.20.1.13" instance="temperatureProbeTableEntry" alias="temProbLoweCritThre" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.700.20.1.14" instance="temperatureProbeTableEntry" alias="temProLowNonRecThre" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.700.20.1.16" instance="temperatureProbeTableEntry" alias="tempProbeDiscrReadi" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.700.20.1.8" instance="temperatureProbeTableEntry" alias="tempProbeLocName" type="string"/>
+   </group>
+   <group name="processorDeviceTable" ifType="all">
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.1100.30.1.11" instance="processorDeviceTableEntry" alias="procDevicMaximSpeed" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.1100.30.1.12" instance="processorDeviceTableEntry" alias="procDevicCurreSpeed" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.1100.30.1.13" instance="processorDeviceTableEntry" alias="proDeviExteClocSpee" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.1100.30.1.14" instance="processorDeviceTableEntry" alias="procesDeviceVoltage" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.1100.30.1.17" instance="processorDeviceTableEntry" alias="proceDevicCoreCount" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.1100.30.1.18" instance="processorDeviceTableEntry" alias="proDeviCoreEnabCoun" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.1100.30.1.19" instance="processorDeviceTableEntry" alias="procDevicThreaCount" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.1100.30.1.26" instance="processorDeviceTableEntry" alias="procDevicFQDD" type="string"/>
+   </group>
+   <group name="memoryDeviceTable" ifType="all">
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.1100.50.1.14" instance="memoryDeviceTableEntry" alias="memoryDeviceSize" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.1100.50.1.15" instance="memoryDeviceTableEntry" alias="memoryDeviceSpeed" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.1100.50.1.27" instance="memoryDeviceTableEntry" alias="memDeviCurrOperSpee" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.4.1100.50.1.8" instance="memoryDeviceTableEntry" alias="memDevicLocName" type="string"/>
+   </group>
+   <group name="controllerTable" ifType="all">
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.5.1.20.130.1.1.7" instance="controllerTableEntry" alias="controllRebuildRate" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.5.1.20.130.1.1.9" instance="controllerTableEntry" alias="controCacheSizeInMB" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.5.1.20.130.1.1.48" instance="controllerTableEntry" alias="controlReconstrRate" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.5.1.20.130.1.1.49" instance="controllerTableEntry" alias="contrPatrolReadRate" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.5.1.20.130.1.1.50" instance="controllerTableEntry" alias="controllerBGIRate" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.5.1.20.130.1.1.51" instance="controllerTableEntry" alias="contrCheckConsiRate" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.5.1.20.130.1.1.53" instance="controllerTableEntry" alias="contrPatroReadState" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.5.1.20.130.1.1.78" instance="controllerTableEntry" alias="contrFQDD" type="string"/>
+   </group>
+   <group name="physicalDiskTable" ifType="all">
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.5.1.20.130.4.1.11" instance="physicalDiskTableEntry" alias="physiDiskCapaciInMB" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.5.1.20.130.4.1.17" instance="physicalDiskTableEntry" alias="phyDiskUsedSpacInMB" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.5.1.20.130.4.1.19" instance="physicalDiskTableEntry" alias="phyDiskFreeSpacInMB" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.5.1.20.130.4.1.49" instance="physicalDiskTableEntry" alias="phyDisRemRatWriEndu" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.5.1.20.130.4.1.50" instance="physicalDiskTableEntry" alias="physicaDiskOperStat" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.5.1.20.130.4.1.51" instance="physicalDiskTableEntry" alias="physicaDiskProgress" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.5.1.20.130.4.1.6" instance="physicalDiskTableEntry" alias="physicalDiskID" type="string"/>
+   </group>
+   <group name="virtualDiskTable" ifType="all">
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.5.1.20.140.1.1.2" instance="virtualDiskTableEntry" alias="virtualDiskName" type="string"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.5.1.20.140.1.1.6" instance="virtualDiskTableEntry" alias="virtualDiskSizeInMB" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.5.1.20.140.1.1.23" instance="virtualDiskTableEntry" alias="virtDiskBadBlocDete" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.5.1.20.140.1.1.30" instance="virtualDiskTableEntry" alias="virtuDiskOperaState" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.5.1.20.140.1.1.31" instance="virtualDiskTableEntry" alias="virtualDiskProgress" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.5.1.20.140.1.1.34" instance="virtualDiskTableEntry" alias="virtuDiskRemaiRedun" type="gauge"/>
+   </group>
+   <systemDef name="Dell-iDRAC9">
+      <sysoid>.1.3.6.1.4.1.674.10892.5</sysoid>
+      <collect>
+         <includeGroup>powerSupplyTable</includeGroup>
+         <includeGroup>voltageProbeTable</includeGroup>
+         <includeGroup>amperageProbeTable</includeGroup>
+         <includeGroup>powerUsageTable</includeGroup>
+         <includeGroup>coolingDeviceTable</includeGroup>
+         <includeGroup>temperatureProbeTable</includeGroup>
+         <includeGroup>processorDeviceTable</includeGroup>
+         <includeGroup>memoryDeviceTable</includeGroup>
+         <includeGroup>batteryDeviceTable</includeGroup>
+         <includeGroup>controllerTable</includeGroup>
+         <includeGroup>physicalDiskTable</includeGroup>
+         <includeGroup>virtualDiskTable</includeGroup>
+      </collect>
+   </systemDef>
+
+</datacollection-group>
