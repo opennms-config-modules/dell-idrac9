@@ -1,0 +1,39 @@
+= Intergrated Dell Remote Access Controller 9
+
+OpenNMS configuration files for iDRAC 9.
+
+== Installation
+
+.Download and install from GitHub
+[source, bash]
+----
+mkdir ${HOME}/opennms-config-workspace
+cd ${HOME}/opennms-config-workspace
+git clone https://github.com/opennms-config-modules/dell-idrac9.git
+----
+
+=== Data Collection
+
+.Install datacollection configuration
+[source, bash]
+----
+cp ${HOME}/opennms-config-workspace/dell-idrac9/datacollection/*.xml ${OPENNMS_HOME}/etc/datacollection
+----
+
+.Include in datacollection-config.xml
+[source, xml]
+----
+<include-collection dataCollectionGroup="Dell-iDRAC9"/>
+----
+
+=== Graph Report Definitions
+
+.Install graph report definitions
+[source, bash]
+----
+cp ${HOME}/opennms-config-workspace/dell-idrac9/graphs/*.properties ${OPENNMS_HOME}/etc/snmp-graph.properties.d
+----
+
+=== Monitors ===
+
+`${home}/monitors/poller-configuration.xml` contains example monitors.
