@@ -37,3 +37,7 @@ cp ${HOME}/opennms-config-workspace/dell-idrac9/graphs/*.properties ${OPENNMS_HO
 === Monitors ===
 
 `${home}/monitors/poller-configuration.xml` contains example monitors.
+
+=== Detectors ===
+
+`${home}/detectors/detectors.xml`contains detector configurations for the monitors above.
