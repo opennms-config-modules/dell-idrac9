@@ -31,7 +31,7 @@ cp ${HOME}/opennms-config-workspace/dell-idrac9/datacollection/*.xml ${OPENNMS_H
 .Install graph report definitions
 [source, bash]
 ----
-cp ${HOME}/opennms-config-workspace/dell-idrac9/graphs/*.properties ${OPENNMS_HOME}/etc/snmp-graph.properties.d
+cp ${HOME}/opennms-config-workspace/dell-idrac9/snmp-graph.properties.d/*.properties ${OPENNMS_HOME}/etc/snmp-graph.properties.d
 ----
 
 === Monitors ===
