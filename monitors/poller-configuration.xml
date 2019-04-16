@@ -75,7 +75,6 @@
          <parameter key="reason-template" value="The state should be (${operand}), the observed value is ${observedValue}: unknown(1), ready(2), failed(3), missing(4), degraded(5). Check details on https://${ipaddr}"/>
       </service>
    <monitor service="Dell-System-Health" class-name="org.opennms.netmgt.poller.monitors.SnmpMonitor"/>
-   <monitor service="Dell-LCD" class-name="org.opennms.netmgt.poller.monitors.SnmpMonitor"/>
    <monitor service="Dell-Storage" class-name="org.opennms.netmgt.poller.monitors.SnmpMonitor"/>
    <monitor service="Dell-Power" class-name="org.opennms.netmgt.poller.monitors.SnmpMonitor"/>
    <monitor service="Dell-Memory" class-name="org.opennms.netmgt.poller.monitors.SnmpMonitor"/>
