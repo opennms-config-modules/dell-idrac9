@@ -10607,21 +10607,8 @@
 
 	alertRacFQDN&lt;/b>&lt;/td>&lt;td>
 	%parm[#11]%;&lt;/td>&lt;td>&lt;p>&lt;/p>&lt;/td>&lt;/tr>&lt;/table></descr>
-      <logmsg dest="logndisplay">&lt;p>
-	alertUpdateJobInformation trap received
-	alertMessageID=%parm[#1]%
-	alertMessage=%parm[#2]%
-	alertCurrentStatus=%parm[#3]%
-	alertSystemServiceTag=%parm[#4]%
-	alertSystemFQDN=%parm[#5]%
-	alertFQDD=%parm[#6]%
-	alertDeviceDisplayName=%parm[#7]%
-	alertMessageArguments=%parm[#8]%
-	alertChassisServiceTag=%parm[#9]%
-	alertChassisName=%parm[#10]%
-	alertRacFQDN=%parm[#11]%&lt;/p>
-	</logmsg>
-      <severity>Indeterminate</severity>
+      <logmsg dest="logndisplay">alertMessage=%parm[#2]%</logmsg>
+      <severity>Warning</severity>
       <varbindsdecode>
          <parmid>parm[#3]</parmid>
          <decode varbindvalue="1" varbinddecodedstring="other"/>
@@ -10631,6 +10618,7 @@
          <decode varbindvalue="5" varbinddecodedstring="critical"/>
          <decode varbindvalue="6" varbinddecodedstring="nonRecoverable"/>
       </varbindsdecode>
+      <alarm-data reduction-key="%uei%:%dpname%:%nodeid%:%interface%" alarm-type="3" auto-clean="false"/>
    </event>
    <event>
       <mask>
