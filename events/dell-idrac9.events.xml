@@ -10607,7 +10607,7 @@
 
 	alertRacFQDN&lt;/b>&lt;/td>&lt;td>
 	%parm[#11]%;&lt;/td>&lt;td>&lt;p>&lt;/p>&lt;/td>&lt;/tr>&lt;/table></descr>
-      <logmsg dest="logndisplay">alertMessage=%parm[#2]%</logmsg>
+      <logmsg dest="logndisplay">%parm[#2]%</logmsg>
       <severity>Warning</severity>
       <varbindsdecode>
          <parmid>parm[#3]</parmid>
