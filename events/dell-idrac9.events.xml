@@ -2809,7 +2809,7 @@
 	alertChassisName=%parm[#10]%
 	alertRacFQDN=%parm[#11]%&lt;/p>
 	</logmsg>
-      <severity>Indeterminate</severity>
+      <severity>Warning</severity>
       <varbindsdecode>
          <parmid>parm[#3]</parmid>
          <decode varbindvalue="1" varbinddecodedstring="other"/>
@@ -2819,6 +2819,7 @@
          <decode varbindvalue="5" varbinddecodedstring="critical"/>
          <decode varbindvalue="6" varbinddecodedstring="nonRecoverable"/>
       </varbindsdecode>
+      <alarm-data reduction-key="%uei%:%dpname%:%nodeid%:%interface%" alarm-type="3" auto-clean="false"/>
    </event>
    <event>
       <mask>
