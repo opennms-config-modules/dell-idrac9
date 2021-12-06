@@ -155,6 +155,7 @@
       <mibObj oid=".1.3.6.1.4.1.674.10892.5.5.1.20.130.4.1.49" instance="physicalDiskTableEntry" alias="phyDisRemRatWriEndu" type="gauge"/>
       <mibObj oid=".1.3.6.1.4.1.674.10892.5.5.1.20.130.4.1.50" instance="physicalDiskTableEntry" alias="physicaDiskOperStat" type="gauge"/>
       <mibObj oid=".1.3.6.1.4.1.674.10892.5.5.1.20.130.4.1.51" instance="physicalDiskTableEntry" alias="physicaDiskProgress" type="gauge"/>
+      <mibObj oid=".1.3.6.1.4.1.674.10892.5.5.1.20.130.4.1.7" instance="physicalDiskTableEntry" alias="physicaDiskSerial" type="string"/>
       <mibObj oid=".1.3.6.1.4.1.674.10892.5.5.1.20.130.4.1.6" instance="physicalDiskTableEntry" alias="physicalDiskID" type="string"/>
    </group>
    <group name="virtualDiskTable" ifType="all">
